@@ -1,0 +1,25 @@
+<!--
+  Generated template for the SigninPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Кодика.Чаты</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form (ngSubmit)="enterNickname()">
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Введите ваше имя</ion-label>
+        <ion-input type="text" [(ngModel)]="data.nickname" name="nickname" required=""></ion-input>
+      </ion-item>
+      <ion-item>
+        <button ion-button full round color="secondary" type="submit">Войти</button>
+      </ion-item>
+    </ion-list>
+  </form>
+</ion-content>

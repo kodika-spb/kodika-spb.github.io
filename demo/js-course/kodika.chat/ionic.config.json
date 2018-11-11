@@ -1,0 +1,7 @@
+{
+  "name": "kodika.chat",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
