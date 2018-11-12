@@ -1,0 +1,16 @@
+{
+  "name": "activity-monitor",
+  "version": "1.0.0",
+  "description": "CPU activity monitor",
+  "repository": "electron/simple-samples",
+  "main": "app.js",
+  "scripts": {
+    "start": "electron app.js",
+    "pack": "electron-packager ."
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^3.0.2",
+    "electron-packager": "^12.2.0"
+  }
+}
