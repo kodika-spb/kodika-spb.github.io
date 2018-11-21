@@ -1,7 +1,0 @@
-@font-face {
-font-family: 'Rubik';
-src: url('//s.lpmtr.ru/web/user/fonts/rubik/rubik_bold.woff2') format('woff2'); url('//s.lpmtr.ru/web/user/fonts/rubik/rubik_bold.woff') format('woff');
-font-weight: 700;
-font-style: normal;
-font-display: swap;
-}
