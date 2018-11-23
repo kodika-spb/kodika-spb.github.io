@@ -2,7 +2,7 @@
 # 
 # Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 choco feature enable --name=allowGlobalConfirmation  --yes=true
-choco install jdk8 python2 nodejs git androidstudio firefox 7zip sublimetext3 far
+choco install jdk8 python2 nodejs git androidstudio firefox 7zip sublimetext3 far gimp inkscape
 
 # install
 # - adblock plus
