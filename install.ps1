@@ -1,5 +1,20 @@
 # IMPORTANT! right click on PowerShell and select "Run As Administrator"
 
+# uninstall built in apps
+get-appxpackage *getstarted* | remove-appxpackage
+get-appxpackage *skypeapp* | remove-appxpackage
+get-appxpackage *zune* | remove-appxpackage
+get-appxpackage *maps* | remove-appxpackage
+get-appxpackage *messaging* | remove-appxpackage
+get-appxpackage *solitaire* | remove-appxpackage
+get-appxpackage *wallet* | remove-appxpackage
+get-appxpackage *bing* | remove-appxpackage
+get-appxpackage *onenote* | remove-appxpackage
+get-appxpackage *people* | remove-appxpackage
+get-appxpackage *phone* | remove-appxpackage
+get-appxpackage *sticky* | remove-appxpackage
+get-appxpackage *xbox* | remove-appxpackage
+
 # enabling guest user account
 net user guest /active:yes
 
