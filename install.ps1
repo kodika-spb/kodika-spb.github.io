@@ -5,6 +5,9 @@ net user guest /active:yes
 
 # uninstall built in apps
 Set-ExecutionPolicy Bypass
+get-appxpackage *alarms* | remove-appxpackage
+get-appxpackage *communicationsapps* | remove-appxpackage
+get-appxpackage *feedback* | remove-appxpackage
 get-appxpackage *getstarted* | remove-appxpackage
 get-appxpackage *skypeapp* | remove-appxpackage
 get-appxpackage *zune* | remove-appxpackage
