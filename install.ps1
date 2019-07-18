@@ -1,7 +1,9 @@
 # IMPORTANT! right click on PowerShell and select "Run As Administrator"
 
-# enabling guest user account
-net user guest /active:yes
+# creating guest user account
+net user guest /add /active:yes
+# when asking for password just press Enter to leave password empty
+net user guest *
 
 # uninstall built in apps
 Set-ExecutionPolicy Bypass
