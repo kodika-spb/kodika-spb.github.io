@@ -29,7 +29,7 @@ Set-ExecutionPolicy Unrestricted
 Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 # probably restart of PowerShell window is needed here
 choco feature enable --name=allowGlobalConfirmation --yes=true
-choco install python3 nodejs git firefox 7zip sublimetext3 far gimp inkscape arduino vscode teamviewer urbackup-client
+choco install nodejs git firefox 7zip sublimetext3 far gimp inkscape arduino vscode teamviewer urbackup-client
 # on HP1 laptop also run `choco install urbackup-server`
 
 # install manualy (download to USB stick and install from there)
