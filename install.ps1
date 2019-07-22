@@ -6,7 +6,7 @@ net user guest /add /active:yes
 net user guest *
 
 # uninstall built in apps
-Set-ExecutionPolicy Bypass
+Set-ExecutionPolicy Bypass -Scope Process
 get-appxpackage *alarms* | remove-appxpackage
 get-appxpackage *communicationsapps* | remove-appxpackage
 get-appxpackage *feedback* | remove-appxpackage
@@ -25,7 +25,7 @@ get-appxpackage *sticky* | remove-appxpackage
 get-appxpackage *xbox* | remove-appxpackage
 
 # installing chocolatey and needed software
-Set-ExecutionPolicy Unrestricted
+Set-ExecutionPolicy Bypass -Scope Process
 Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 # probably restart of PowerShell window is needed here
 choco feature enable --name=allowGlobalConfirmation --yes=true
