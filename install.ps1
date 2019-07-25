@@ -23,11 +23,11 @@ get-appxpackage *people* | remove-appxpackage
 get-appxpackage *phone* | remove-appxpackage
 get-appxpackage *sticky* | remove-appxpackage
 get-appxpackage *xbox* | remove-appxpackage
+# uninstall OneDrive
 
 # installing chocolatey and needed software
 Set-ExecutionPolicy Bypass -Scope Process
 Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
-# probably restart of PowerShell window is needed here
 choco feature enable --name=allowGlobalConfirmation --yes=true
 choco install nodejs git firefox 7zip sublimetext3 far gimp inkscape vscode teamviewer urbackup-client blender
 # on HP1 laptop also run `choco install urbackup-server`
@@ -40,7 +40,10 @@ choco install nodejs git firefox 7zip sublimetext3 far gimp inkscape vscode team
 # - bifdefender: https://www.bitdefender.com/solutions/free/thank-you.html
 # - register bifdefender for free use
 # - adblock plus extension to firefox (also login as guest and install it there)
+# - make firefox default browser for admin and guest
+# - in Control panel check for updates
 
+# following lines are optional
 # prepearing device for Windows Admin Center
 # read doc first: https://www.tenforums.com/tutorials/113966-windows-admin-center-centrally-manage-all-your-windows-10-pcs.html
 Set-Service WinRM -StartupType Automatic
