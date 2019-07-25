@@ -43,6 +43,7 @@ choco install nodejs git firefox 7zip sublimetext3 far gimp inkscape arduino vsc
 # prepearing device for Windows Admin Center
 # read doc first: https://www.tenforums.com/tutorials/113966-windows-admin-center-centrally-manage-all-your-windows-10-pcs.html
 Set-Service WinRM -StartupType Automatic
+Start-Service WinRM
 Set-Item WSMan:\localhost\Client\TrustedHosts -Value 'HP1'
 REG ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v LocalAccountTokenFilterPolicy /t REG_DWORD /d 1
 Set-NetFirewallRule -Name WINRM-HTTP-In-TCP -RemoteAddress Any
