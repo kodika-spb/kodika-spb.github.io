@@ -29,13 +29,14 @@ Set-ExecutionPolicy Bypass -Scope Process
 Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 # probably restart of PowerShell window is needed here
 choco feature enable --name=allowGlobalConfirmation --yes=true
-choco install nodejs git firefox 7zip sublimetext3 far gimp inkscape arduino vscode teamviewer urbackup-client blender
+choco install nodejs git firefox 7zip sublimetext3 far gimp inkscape vscode teamviewer urbackup-client blender
 # on HP1 laptop also run `choco install urbackup-server`
 
 # install manualy (download to USB stick and install from there)
 # - kodu: https://www.microsoft.com/en-us/download/details.aspx?id=10056
 # - stencyl: http://www.stencyl.com/download/get/win/
 # - stamina: http://stamina.ru/files/StaminaSetup.exe
+# - arduino: https://www.microsoft.com/ru-ru/p/arduino-ide/9nblggh4rsd8?ocid=badge&rtc=1&activetab=pivot:overviewtab
 # - bifdefender: https://www.bitdefender.com/solutions/free/thank-you.html
 # - register bifdefender for free use
 # - adblock plus extension to firefox (also login as guest and install it there)
