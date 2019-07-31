@@ -53,7 +53,8 @@ choco install nodejs git firefox 7zip sublimetext3 far gimp inkscape vscode team
 # - name computer like: hp01, lenovo01, sony01 etc
 # - in Control panel check for updates
 # - make firefox default browser for admin and guest
-# - for guest account remove useless links from start menu (from right panel)
+# - for guest account unpin useless apps from start menu (like https://www.isunshare.com/images/article/windows-10/2-ways-to-unpin-setting-from-start-menu-in-windows-10/right-click-setting-and-tap-unpin-from-start.png)
+#   and pin there apps that are used by students
 
 # make full image backup of the laptop with UrBackup Server UI
 
@@ -65,5 +66,4 @@ Start-Service WinRM
 Set-Item WSMan:\localhost\Client\TrustedHosts -Value 'hp01'
 REG ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v LocalAccountTokenFilterPolicy /t REG_DWORD /d 1
 Set-NetFirewallRule -Name WINRM-HTTP-In-TCP -RemoteAddress Any
-
-# on hp01 laptop download and install: https://aka.ms/WACDownload
+# on hp01 laptop download and install: https://aka.ms/WACDownload and try management of other laptops
