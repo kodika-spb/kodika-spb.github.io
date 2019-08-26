@@ -1793,11 +1793,17 @@ h1, .heading-1 {
     font-size: 62px;
     line-height: 1.16;
   }
+  .content h1, .heading-1 {
+    font-size: 200%;
+  }
 }
 
 @media (min-width: 992px) {
   h1, .heading-1 {
     line-height: 1.2;
+  }
+  .content h1, .heading-1 {
+    font-size: 200%;
   }
 }
 
@@ -1805,11 +1811,17 @@ h1, .heading-1 {
   h1, .heading-1 {
     font-size: 100px;
   }
+  .content h1, .heading-1 {
+    font-size: 200%;
+  }
 }
 
 @media (min-width: 1200px) and (min-height: 650px) {
   h1, .heading-1 {
     font-size: 120px;
+  }
+  .content h1, .heading-1 {
+    font-size: 200%;
   }
 }
 
@@ -1823,17 +1835,26 @@ h2, .heading-2 {
     font-size: 52px;
     line-height: 1.32;
   }
+  .content h2, .heading-1 {
+    font-size: 170%;
+  }
 }
 
 @media (min-width: 992px) {
   h2, .heading-2 {
     line-height: 1.2;
   }
+  .content h2, .heading-1 {
+    font-size: 170%;
+  }
 }
 
 @media (min-width: 1200px) {
   h2, .heading-2 {
     font-size: 90px;
+  }
+  .content h2, .heading-1 {
+    font-size: 170%;
   }
 }
 
@@ -1868,11 +1889,17 @@ h3, .heading-3 {
     font-size: 45px;
     line-height: 1.37;
   }
+  .content h3, .heading-1 {
+    font-size: 150%;
+  }
 }
 
 @media (min-width: 992px) {
   h3, .heading-3 {
     line-height: 1.2;
+  }
+  .content h3, .heading-1 {
+    font-size: 150%;
   }
 }
 
@@ -1886,12 +1913,18 @@ h4, .heading-4 {
     font-size: 36px;
     line-height: 1.47;
   }
+  .content h4, .heading-1 {
+    font-size: 130%;
+  }
 }
 
 @media (min-width: 1200px) {
   h4, .heading-4 {
     font-size: 40px;
     line-height: 43px;
+  }
+  .content h4, .heading-1 {
+    font-size: 130%;
   }
 }
 
@@ -1905,12 +1938,18 @@ h5, .heading-5 {
     font-size: 24px;
     line-height: 1.66;
   }
+  .content h5, .heading-1 {
+    font-size: 120%;
+  }
 }
 
 @media (min-width: 1200px) {
   h5, .heading-5 {
     font-size: 30px;
     line-height: 30px;
+  }
+  .content h5, .heading-1 {
+    font-size: 120%;
   }
 }
 
@@ -1922,6 +1961,9 @@ h6, .heading-6 {
   h6, .heading-6 {
     font-size: 20px;
     line-height: 1.5;
+  }
+  .content h6, .heading-1 {
+    font-size: 110%;
   }
 }
 
