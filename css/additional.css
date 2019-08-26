@@ -34,3 +34,7 @@
 .rd-navbar-fixed .rd-navbar-nav {
   width: 100%;
 }
+
+.content a {
+  text-decoration: underline !important;
+}
