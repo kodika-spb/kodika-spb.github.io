@@ -19,6 +19,7 @@
 			copyrightYear: $(".copyright-year"),
 			maps: $(".google-map-container"),
 			// responsiveTabs: $('.responsive-tabs'),
+			rdNavbar: $(".rd-navbar"),
 
 			rdMailForm: $(".rd-mailform"),
 			rdInputLabel: $(".form-label"),
@@ -570,5 +571,10 @@
 		// 		});
 		// 	}
 		// }
+
+		if (plugins.rdNavbar.length) {
+			plugins.rdNavbar.RDNavbar({});
+		}
+
 	});
 }());

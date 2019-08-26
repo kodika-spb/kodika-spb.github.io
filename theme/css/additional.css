@@ -1,0 +1,36 @@
+.rd-navbar-outer
+{
+  background-color: #51788b;
+}
+
+.rd-navbar-static .rd-navbar-nav > li > a
+{
+  color: #51c1d1;
+}
+
+.rd-navbar-fixed .rd-navbar-nav li.active > a {
+  background: #51c1d1;
+}
+
+.rd-navbar-static .rd-navbar-panel {
+    padding: 0;
+}
+
+.rd-navbar-brand {
+  color: white;
+  z-index: 1;
+  padding-top: 5px;
+}
+
+.rd-navbar--is-touch .rd-navbar-brand {
+  color: black;
+  padding-top: 0;
+}
+
+.rd-navbar-nav {
+  float: right;
+}
+
+.rd-navbar-fixed .rd-navbar-nav {
+  width: 100%;
+}
