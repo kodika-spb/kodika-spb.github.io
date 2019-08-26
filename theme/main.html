@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <section class="well">
+  <section class="well content">
     <div class="container">
       <div class="row">
-        <div class="col-sm-9">
+        <div class="col-sm-12">
           {{ page.content }}
         </div>
-        <div class="col-sm-3">
+        <!-- <div class="col-sm-3">
           <ul>
           {% for toc_item in page.toc %}
               <li><a href="{{ toc_item.url }}">{{ toc_item.title }}</a></li>
@@ -16,7 +16,7 @@
               {% endfor %}
           {% endfor %}
           </ul>
-        </div>
+        </div> -->
       </div>
     </div>
   </section>
