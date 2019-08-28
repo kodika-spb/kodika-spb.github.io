@@ -83,7 +83,26 @@ template: blank.html
                        </div>
                     </div>
                  </div>
-                 <div class="col-sm-7 col-md-6 col-lg-4 offset-top-20 offset-md-top-0">
+                 <div class="col-sm-7 col-md-6 col-lg-4">
+                    <div class="box-info">
+                       <div class="box-info-content">
+                          <div class="box-info-header">Робототехника<br/>начальный модуль</div>
+                          <div class="box-info-body">
+                             <dl class="info-list">
+                                <dt>начальный уровень</dt>
+                                <dd>В котором дети освоят азы робототехники и научатся
+                                   <br>собирать и программировать
+                                   <br>простейших роботов
+                                </dd>
+                             </dl>
+                          </div>
+                          <div class="box-info-footer">
+                            <a href="courses/robots-1" class="link">Подробнее</a>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+                 <div class="col-sm-7 col-md-6 col-lg-4">
                     <div class="box-info">
                        <div class="box-info-content">
                           <div class="box-info-header">Игры<br/>и мобильная разработка</div>
@@ -102,7 +121,9 @@ template: blank.html
                        </div>
                     </div>
                  </div>
-                 <div class="col-sm-7 col-md-6 col-lg-4 offset-top-20 offset-lg-top-0">
+             </div>
+              <div class="row row-sm-center">
+                 <div class="col-sm-7 col-md-6 col-lg-4">
                     <div class="box-info">
                        <div class="box-info-content">
                           <div class="box-info-header">Игры, сайты<br/>и приложения</div>

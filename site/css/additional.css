@@ -38,3 +38,28 @@
 .content a {
   text-decoration: underline !important;
 }
+
+.content .row {
+  margin-top: 10px
+}
+
+.content p {
+  margin-top: 10px
+}
+
+.content h1 {
+  text-transform: none;
+}
+
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
+  text-transform: none;
+  margin-top: 30px
+}
+
+.responsive-tabs .row {
+  margin-top: 30px
+}
