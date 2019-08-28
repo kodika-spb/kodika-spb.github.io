@@ -78,7 +78,7 @@ template: blank.html
                              </dl>
                           </div>
                           <div class="box-info-footer">
-                            <a href="courses/intro" class="link">Подробнее</a>
+                            <a href="courses/intro/" class="link">Подробнее</a>
                           </div>
                        </div>
                     </div>
@@ -97,7 +97,7 @@ template: blank.html
                              </dl>
                           </div>
                           <div class="box-info-footer">
-                            <a href="courses/robots-1" class="link">Подробнее</a>
+                            <a href="courses/robots-1/" class="link">Подробнее</a>
                           </div>
                        </div>
                     </div>
