@@ -11272,8 +11272,8 @@ html:not(.lt-ie10) .not-animated {
   position: relative;
   z-index: 1;
   text-decoration: none;
-  padding: 15px 37px 13px 22px;
-  font-size: 19px;
+  padding: 15px 22px 13px 22px;
+  font-size: 14px;
   border-radius: 5px;
   text-transform: uppercase;
   letter-spacing: 0.03em;

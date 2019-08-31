@@ -60,6 +60,16 @@
   margin-top: 30px
 }
 
-.responsive-tabs .row {
-  margin-top: 30px
+.content .responsive-tabs a,
+.content .btn {
+  text-decoration: none !important;
+}
+
+
+.content ol, .content ul {
+  list-style: inherit;
+}
+
+.content ul {
+  padding-left: 40px;
 }

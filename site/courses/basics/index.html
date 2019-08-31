@@ -8,7 +8,7 @@
 		gtag('js', new Date());
 		gtag('config', 'UA-129633625-1');
 	</script>
-  <title>{% if page.title %}{{ page.title }} - {% endif %}{{ config.site_name }}</title>
+  <title>Основы логики и программирования - Kodika</title>
 	<meta charset="utf-8">
 	<meta name="format-detection" content="telephone=no">
 	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -43,11 +43,19 @@
                 </div>
                 <div class="rd-navbar-nav-wrap">
                   <ul class="rd-navbar-nav">
-                    {% for nav_item in nav %}
-                      <li class="{% if nav_item.active%}active{% endif %}">
-                        <a href="{{ nav_item.url|url }}">{{ nav_item.title }}</a>
+                    
+                      <li class="">
+                        <a href="../..">Главная</a>
                       </li>
-                    {% endfor %}
+                    
+                      <li class="">
+                        <a href="../">Курсы</a>
+                      </li>
+                    
+                      <li class="">
+                        <a href="../../about/">О нас</a>
+                      </li>
+                    
                   </ul>
                 </div>
               </div>
@@ -61,7 +69,57 @@
       <div class="old-ie" style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;"><a href="http://windows.microsoft.com/en-US/internet-explorer/.."><img src="/images/ie8-panel/warning_bar_0000_us.jpg"
            height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
       <div class="page">
-        {% block content %}{% endblock %}
+        
+  <section class="well content">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h1 id="_1">Основы логики и программирования</h1>
+<p><strong>Возраст:</strong> 6-9 лет</p>
+<p>Чему научим:</p>
+<ul>
+<li>азам работы с ПК</li>
+<li>принципам работы с алгоритмами и циклами</li>
+<li>созданию анимированных персонажей и его программированию</li>
+<li>созданию игр, викторин, мультфильмов c помощью Scratch, Kodu game lab</li>
+</ul>
+<p>Сначала мы изучим ПК. Научимся пользоваться им на базовом уровне.</p>
+<p>Затем мы начнем плавное погружение в мир программирования. Начнем мы обучение с блочного программирования, адаптированного специально для самых маленьких.</p>
+<p>Будем решать головоломки, изучать процедуры и многое другое с помощью специально созданных приложений.</p>
+<p>Следующим этапом будет - создание своих первых программ, будь то игры, анимации, мультфильмы или даже мессенджеры.</p>
+<p>Все занятия рассчитаны на повышение уровня сложности, именно поэтому ребятам не будет скучно.</p>
+<div class="row text-center">
+  <div class="col-sm-12 offset-top-40">
+    <a href="https://goo.gl/forms/OmlArjCEKBNhZj4K3" class="btn btn-medium-turquoise">
+      записаться на бесплатный урок
+    </a>
+  </div>
+</div>
+
+<p>&nbsp;</p>
+<h3 id="_2">Рекомендуемая литература</h3>
+<div class="row text-center">
+  <div class="col-sm-3">
+    <a href="https://www.labirint.ru/books/552457/?p=29258" target="_blank">
+      <img src="https://img1.labirint.ru/books56/552457/big.jpg" width="100%" />
+    </a>
+  </div>
+</div>
+        </div>
+        <!-- <div class="col-sm-3">
+          <ul>
+          
+              <li><a href="#_1">Основы логики и программирования</a></li>
+              
+                  <li><a href="#_2">Рекомендуемая литература</a></li>
+              
+          
+          </ul>
+        </div> -->
+      </div>
+    </div>
+  </section>
+
       </div>
     </main>
 
