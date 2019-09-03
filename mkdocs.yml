@@ -2,7 +2,6 @@ site_name: Kodika
 nav:
   - Главная: index.md
   - Курсы: courses.md
-  - О нас: about.md
 theme:
   name: null
   custom_dir: 'theme'
