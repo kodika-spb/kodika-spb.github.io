@@ -32,7 +32,7 @@ template: blank.html
     </div>
     <div class="row">
       <div class="col-sm-12">
-        <h5>Тогда записывайся на первый бесплатный урок в центр программирования “Кодика”</h5>
+        &nbsp;
         <div class="btn-group">
           <a href="https://goo.gl/forms/OmlArjCEKBNhZj4K3" class="btn btn-medium-turquoise">
             записаться на бесплатный урок
