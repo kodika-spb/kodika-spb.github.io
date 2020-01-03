@@ -1,0 +1,107 @@
+<html>
+  <head>
+    <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/3.21.0/phaser.min.js"></script>
+    <style type="text/css">
+      body, html {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <title>One Tap Chop</title>
+  </head>
+  <body>
+    <div id="one_tap" style="text-align: center;"></div>
+    <script>
+      var bg;
+      var hero;
+      var slimes = [];
+      var slimesMaxCount = 3;
+      var lastSlimeCreationMs = new Date().getTime() + 1000; // запускаем слаймов через секунду после начала игры
+      var delayBetweenSlimesMs = 200;
+      var heroAttacking = false;
+
+      function preload() {
+        this.load.atlas(
+          'atlas',
+          '/imgs/one_tap_kodika/atlas.png',
+          '/imgs/one_tap_kodika/atlas.json'
+        );
+      }
+
+      function create() {
+        this.anims.create({ key: 'hero_idle',    frames: this.anims.generateFrameNames('atlas', { prefix: 'hero/hero_idle_',     end: 5}), repeat: -1 });
+        this.anims.create({ key: 'hero_attack',  frames: this.anims.generateFrameNames('atlas', { prefix: 'hero/hero_attack_',   end: 5}), repeat: -1 });
+        this.anims.create({ key: 'slime_attack', frames: this.anims.generateFrameNames('atlas', { prefix: 'slime/slime_attack_', end: 5}), repeat: -1 });
+
+        // ниже понятно почему нужна математика
+        bg = this.add.sprite(0, 0, 'atlas', 'bg_level_0');
+        bg.x = bg.width / 2;
+        bg.y = bg.height / 2;
+        
+        hero = this.add.sprite(0, 0, 'hero');
+        hero.x = bg.width / 2;
+        hero.y = bg.height / 2 + hero.height;
+        
+        var heroShadow = this.add.sprite(0, 0, 'atlas', 'hero_shadow');
+        heroShadow.x = bg.width / 2;
+        heroShadow.y = hero.y + hero.height + heroShadow.height / 2;
+        
+        this.add.text(20, 15, 'score: 0');
+
+        heroIdle();
+        this.input.on("pointerdown", heroAttack, this);
+      }
+
+      function update() {
+        var nowMs = new Date().getTime();
+        if (slimes.length < slimesMaxCount && lastSlimeCreationMs + delayBetweenSlimesMs < nowMs) {
+          var slime = this.add.sprite(0, hero.y + 10, 'slime');
+          slime.flipX = Math.random() > 0.5;
+          // наверно не стоит писать такие конструкции
+          slime.x = slime.flipX ? bg.x * 2 : 0;
+          slime.play('slime_attack')
+          slimes.push(slime);
+          lastSlimeCreationMs = nowMs;
+        }
+
+        for (var i = 0; i != slimes.length; i++) {
+          var slime = slimes[i];
+          // наверно не стоит писать такие конструкции
+          slime.x += slime.flipX ? -3 : 3;
+        }
+
+        // TODO: проверить кто кого убил, слайм рыцаря или наоборот
+      }
+
+      function heroIdle() {
+        hero.play('hero_idle');
+        heroAttacking = false;
+      }
+
+      function heroAttack(tap) {
+        if (heroAttacking) {
+          return;
+        }
+
+        heroAttacking = true;
+        hero.flipX = tap.downX > bg.x;
+        hero.play('hero_attack', true);
+        setTimeout(heroIdle, 500);
+      }
+
+      new Phaser.Game({
+        scene: {
+          preload: preload,
+          create: create,
+          update: update,
+        },
+        physics: { default: 'arcade' },
+        parent: 'one_tap',
+        width: 360,
+        height: 480,
+        backgroundColor: '#ffffff',
+      });
+    </script>
+  </body>
+</html>
