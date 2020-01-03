@@ -52,6 +52,7 @@
         bg = this.add.sprite(0, 0, 'atlas', 'bg_level_0');
         bg.x = bg.width / 2;
         bg.y = bg.height / 2;
+        bg.scaleX = 1.2
         
         hero = this.add.sprite(0, 0, 'hero');
         hero.x = bg.width / 2;
@@ -112,7 +113,7 @@
         },
         physics: { default: 'arcade' },
         parent: 'one_tap',
-        width: 360,
+        width: 380,
         height: 480,
         backgroundColor: '#ffffff',
       });
