@@ -7,11 +7,23 @@
         margin: 0;
         padding: 0;
       }
+      @media (prefers-color-scheme: dark) {
+        html {
+          background-color: black;
+        }
+      }
+      #one_tap {
+        text-align: center;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+      }
     </style>
     <title>One Tap Chop</title>
   </head>
   <body>
-    <div id="one_tap" style="text-align: center;"></div>
+    <div id="one_tap"></div>
     <script>
       var bg;
       var hero;
