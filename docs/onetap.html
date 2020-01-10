@@ -101,10 +101,11 @@
         }
 
         if (Math.abs(hero.x - slime.x) < 20) {
+          this.input.disable(this);
           hero.play('poof', true);
           var gameOver = this.add.text(0, 0, 'GAME OVER!', {fontSize: 40, fontStyle: 'bold'});
           gameOver.x = bg.x - gameOver.width / 2;
-          gameOver.y = bg.y;
+          gameOver.y = bg.y - gameOver.height;
         }
       }
 
