@@ -29,11 +29,12 @@
     <script>
       var bg;
       var hero;
-      var slimes = [];
-      var slimesMaxCount = 3;
-      var lastSlimeCreationMs = new Date().getTime() + 1000; // запускаем слаймов через секунду после начала игры
-      var delayBetweenSlimesMs = 200;
+      var heroShadow;
+      var slime;
+      var slimeSpeed = 0.2;
       var heroAttacking = false;
+      var score = 0;
+      var scoreText;
 
       function preload() {
         this.load.atlas(
@@ -47,46 +48,64 @@
         this.anims.create({ key: 'hero_idle',    frames: this.anims.generateFrameNames('atlas', { prefix: 'hero/hero_idle_',     end: 5}), repeat: -1 });
         this.anims.create({ key: 'hero_attack',  frames: this.anims.generateFrameNames('atlas', { prefix: 'hero/hero_attack_',   end: 5}), repeat: -1 });
         this.anims.create({ key: 'slime_attack', frames: this.anims.generateFrameNames('atlas', { prefix: 'slime/slime_attack_', end: 5}), repeat: -1 });
+        this.anims.create({ key: 'poof',         frames: this.anims.generateFrameNames('atlas', { prefix: 'vfx/poof_',           end: 5}), repeat: -1 });
 
         // ниже понятно почему нужна математика
         bg = this.add.sprite(0, 0, 'atlas', 'bg_level_0');
+        bg.scaleX = bg.scaleX * 1.1;
         bg.x = bg.width / 2;
         bg.y = bg.height / 2;
-        bg.scaleX = 1.2
         
         hero = this.add.sprite(0, 0, 'hero');
         hero.x = bg.width / 2;
         hero.y = bg.height / 2 + hero.height;
         
-        var heroShadow = this.add.sprite(0, 0, 'atlas', 'hero_shadow');
+        heroShadow = this.add.sprite(0, 0, 'atlas', 'hero_shadow');
         heroShadow.x = bg.width / 2;
         heroShadow.y = hero.y + hero.height + heroShadow.height / 2;
+            
+        slime = this.add.sprite(0, hero.y + 10, 'slime');
+        slime.play('slime_attack');
+            
+        scoreText = this.add.text(20, 15, 'score: 0');
         
-        this.add.text(20, 15, 'score: 0');
-
         heroIdle();
         this.input.on("pointerdown", heroAttack, this);
       }
 
       function update() {
-        var nowMs = new Date().getTime();
-        if (slimes.length < slimesMaxCount && lastSlimeCreationMs + delayBetweenSlimesMs < nowMs) {
-          var slime = this.add.sprite(0, hero.y + 10, 'slime');
+        slime.x += slime.flipX ? -slimeSpeed : slimeSpeed;
+
+        if (hero.anims.getCurrentKey() == 'poof') {
+          return;
+        }
+            
+        if (slime.anims.getCurrentKey() == 'poof') {
+          if (slime.anims.getProgress() < 1) {
+            return;
+          }
+          
+          slime.destroy();
+          slime = this.add.sprite(0, hero.y + 10, 'slime');
           slime.flipX = Math.random() > 0.5;
           // наверно не стоит писать такие конструкции
           slime.x = slime.flipX ? bg.x * 2 : 0;
-          slime.play('slime_attack')
-          slimes.push(slime);
-          lastSlimeCreationMs = nowMs;
+          slime.play('slime_attack');
+        }
+            
+        if (Math.abs(hero.x - slime.x) < 70 && hero.flipX == slime.flipX && heroAttacking) {
+          slime.play('poof', true);
+          score = score + 1;
+          scoreText.setText('score: ' + score);
+          slimeSpeed = score / 5;
         }
 
-        for (var i = 0; i != slimes.length; i++) {
-          var slime = slimes[i];
-          // наверно не стоит писать такие конструкции
-          slime.x += slime.flipX ? -3 : 3;
+        if (Math.abs(hero.x - slime.x) < 20) {
+          hero.play('poof', true);
+          var gameOver = this.add.text(0, 0, 'GAME OVER!', {fontSize: 40, fontStyle: 'bold'});
+          gameOver.x = bg.x - gameOver.width / 2;
+          gameOver.y = bg.y;
         }
-
-        // TODO: проверить кто кого убил, слайм рыцаря или наоборот
       }
 
       function heroIdle() {
@@ -113,7 +132,7 @@
         },
         physics: { default: 'arcade' },
         parent: 'one_tap',
-        width: 380,
+        width: '100%',
         height: 480,
         backgroundColor: '#ffffff',
       });
