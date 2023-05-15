@@ -12674,3 +12674,8 @@ a.icon-white:hover {
 .page-footer p {
   line-height: 28px;
 }
+.address{
+  margin-bottom: 0.8rem;
+  border-bottom: 1px solid white;
+  padding-bottom: 0.5rem;
+}
